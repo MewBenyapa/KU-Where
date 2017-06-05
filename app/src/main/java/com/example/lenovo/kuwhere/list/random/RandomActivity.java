@@ -31,8 +31,13 @@ public class RandomActivity extends AppCompatActivity implements RandomView {
         presenter = new RandomPresenter(this);
 
         name = (EditText) findViewById(R.id.name);
+        name.setEnabled(false);
+
         price = (EditText) findViewById(R.id.price);
+        price.setEnabled(false);
+
         location = (EditText) findViewById(R.id.location);
+        location.setEnabled(false);
 
         random = (Button) findViewById(R.id.random_menu);
     }
