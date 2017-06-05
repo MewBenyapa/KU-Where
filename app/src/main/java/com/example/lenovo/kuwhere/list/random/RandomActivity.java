@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.lenovo.kuwhere.R;
 import com.example.lenovo.kuwhere.data.Food;
+import com.example.lenovo.kuwhere.data.MockUpMenu;
 
 /**
  * Created by lenovo on 6/5/2017.
@@ -20,6 +21,7 @@ public class RandomActivity extends AppCompatActivity implements RandomView {
     private RandomPresenter presenter;
     private EditText name, price, location;
     private Button random;
+    private MockUpMenu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,15 @@ public class RandomActivity extends AppCompatActivity implements RandomView {
         setContentView(R.layout.random);
 
         presenter = new RandomPresenter(this);
+
         name = (EditText) findViewById(R.id.name);
         price = (EditText) findViewById(R.id.price);
+        location = (EditText) findViewById(R.id.location);
+
         random = (Button) findViewById(R.id.random_menu);
-        random.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(RandomActivity.this, RandomActivity.class);
-            }
-        });
+    }
+
+    public void randomMenu(View view) {
         presenter.randomMenu();
     }
 

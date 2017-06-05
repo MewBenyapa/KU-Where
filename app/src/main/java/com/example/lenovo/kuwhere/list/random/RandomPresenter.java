@@ -1,6 +1,7 @@
 package com.example.lenovo.kuwhere.list.random;
 
 import com.example.lenovo.kuwhere.data.Food;
+import com.example.lenovo.kuwhere.data.MockUpMenu;
 
 import java.util.ArrayList;
 
@@ -10,15 +11,16 @@ import java.util.ArrayList;
 
 public class RandomPresenter {
     private RandomView randomView;
-
-    ArrayList<Food> food;
+    private MockUpMenu mockUpMenu;
 
     public RandomPresenter(RandomView randomView) {
         this.randomView = randomView;
-        food = new ArrayList<Food>();
+        this.mockUpMenu = MockUpMenu.getInstance();
     }
 
     public void randomMenu() {
-
+        int random = (int) (Math.random() * mockUpMenu.getAllFood().size());
+        Food menu = mockUpMenu.getAllFood().get(random);
+        randomView.setRandomMenu(menu);
     }
 }
