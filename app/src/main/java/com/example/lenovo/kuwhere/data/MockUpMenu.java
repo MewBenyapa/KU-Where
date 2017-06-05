@@ -1,5 +1,7 @@
 package com.example.lenovo.kuwhere.data;
 
+import com.example.lenovo.kuwhere.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +21,7 @@ public class MockUpMenu extends ShowRepository {
         return instance;
     }
 
-    @Override
-    public void allFood() {
+    private MockUpMenu() {
         menu = new ArrayList<Food>();
         menu.add(new Food("Pad Thai", "IUP cafeteria", 35.0));
         menu.add(new Food("Noodle", "IUP cafeteria", 30.0));
@@ -33,11 +34,16 @@ public class MockUpMenu extends ShowRepository {
         menu.add(new Food("Omlet", "Economics Cafeteria", 25.0));
         menu.add(new Food("Yum Woon Sen", "Management Cafeteria", 35.0));
         menu.add(new Food("Som Tum", "Management Cafeteria", 30.0));
-        menu.add(new Food("Bulgogi Rice Bowl", "Management cafeteria", 45.0));
+        menu.add(new Food("Bulgogi Rice Bowl", "Management cafeteria", 45.0));    }
+
+    @Override
+    public void allFood() {
+        setChanged();
+        notifyObservers();
     }
 
     @Override
     public List<Food> getAllFood() {
-        return null;
+        return menu;
     }
 }

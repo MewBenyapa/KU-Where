@@ -20,7 +20,7 @@ public class ShowActivity extends AppCompatActivity implements ShowListView {
 
     ShowListPresenter presenter;
     ArrayAdapter<Food> foodArrayAdapter;
-    private ListView foodListView;
+    private ListView menuListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,9 @@ public class ShowActivity extends AppCompatActivity implements ShowListView {
 
         ShowRepository repository = MockUpMenu.getInstance();
 
-        foodListView = (ListView) findViewById(R.id.food_list);
+        menuListView = (ListView) findViewById(R.id.food_list);
         foodArrayAdapter = createAdapter(new ArrayList<Food>());
-        foodListView.setAdapter(foodArrayAdapter);
+        menuListView.setAdapter(foodArrayAdapter);
 
         presenter = new ShowListPresenter(repository, this);
         presenter.initialize();
@@ -40,7 +40,7 @@ public class ShowActivity extends AppCompatActivity implements ShowListView {
     @Override
     public void updateFood(ArrayList<Food> foods) {
         foodArrayAdapter = createAdapter(foods);
-        foodListView.setAdapter(foodArrayAdapter);
+        menuListView.setAdapter(foodArrayAdapter);
     }
 
     private ArrayAdapter<Food> createAdapter(ArrayList<Food> foods) {

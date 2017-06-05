@@ -33,6 +33,7 @@ public class ShowListPresenter implements Observer {
     public void update(Observable o, Object arg) {
         if(o == repository) {
             foods = new ArrayList<Food>(repository.getAllFood());
+            view.updateFood(foods);
         }
     }
 }

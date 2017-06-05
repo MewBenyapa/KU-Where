@@ -7,5 +7,5 @@ import com.example.lenovo.kuwhere.data.Food;
  */
 
 public interface RandomView {
-    public void randomMenu(Food food);
+    public void setRandomMenu(Food food);
 }
