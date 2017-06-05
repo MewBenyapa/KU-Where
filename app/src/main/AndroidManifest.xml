@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".list.ChoiceActivity"></activity>
-        <activity android:name=".list.RandomActivity"></activity>
+        <activity android:name=".list.random.RandomActivity"></activity>
         <activity android:name=".list.show.ShowActivity"></activity>
     </application>
 

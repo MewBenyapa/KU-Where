@@ -12,6 +12,7 @@ import java.util.Observer;
  */
 
 public class ShowListPresenter implements Observer {
+
     private ShowListView view;
     private ShowRepository repository;
 

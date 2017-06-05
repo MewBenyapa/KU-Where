@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.lenovo.kuwhere.R;
+import com.example.lenovo.kuwhere.list.random.RandomActivity;
 import com.example.lenovo.kuwhere.list.show.ShowActivity;
 
 /**
@@ -27,6 +28,7 @@ public class ChoiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(ChoiceActivity.this, RandomActivity.class);
+                startActivity(in);
             }
         });
 
@@ -35,6 +37,7 @@ public class ChoiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(ChoiceActivity.this, ShowActivity.class);
+                startActivity(in);
             }
         });
 

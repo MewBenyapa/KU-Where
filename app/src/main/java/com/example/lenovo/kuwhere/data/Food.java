@@ -5,35 +5,17 @@ package com.example.lenovo.kuwhere.data;
  */
 
 public class Food {
-    private int id, rate;
     private double price;
-    private String name;
+    private String name, location;
 
-    public Food(int id, int rate, double price, String name) {
-        this.id = id;
-        this.rate = rate;
+    public Food(String name, String location, double price) {
+        this.location = location;
         this.price = price;
         this.name = name;
     }
 
     public String toString() {
         return name + " (" + price + " Baht)";
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
     }
 
     public double getPrice() {
@@ -51,4 +33,9 @@ public class Food {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getLocation() { return location; }
+
+    public void setLocation(String location) { this.location = location; }
+
 }

@@ -1,4 +1,4 @@
-package com.example.lenovo.kuwhere.list;
+package com.example.lenovo.kuwhere.list.random;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

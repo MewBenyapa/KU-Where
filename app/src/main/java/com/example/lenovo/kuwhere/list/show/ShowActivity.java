@@ -7,6 +7,8 @@ import android.widget.ListView;
 
 import com.example.lenovo.kuwhere.R;
 import com.example.lenovo.kuwhere.data.Food;
+import com.example.lenovo.kuwhere.data.MockUpMenu;
+import com.example.lenovo.kuwhere.data.ShowRepository;
 
 import java.util.ArrayList;
 
@@ -25,13 +27,20 @@ public class ShowActivity extends AppCompatActivity implements ShowListView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show);
 
+        ShowRepository repository = MockUpMenu.getInstance();
+
         foodListView = (ListView) findViewById(R.id.food_list);
+        foodArrayAdapter = createAdapter(new ArrayList<Food>());
+        foodListView.setAdapter(foodArrayAdapter);
+
+        presenter = new ShowListPresenter(repository, this);
         presenter.initialize();
     }
 
     @Override
     public void updateFood(ArrayList<Food> foods) {
         foodArrayAdapter = createAdapter(foods);
+        foodListView.setAdapter(foodArrayAdapter);
     }
 
     private ArrayAdapter<Food> createAdapter(ArrayList<Food> foods) {
